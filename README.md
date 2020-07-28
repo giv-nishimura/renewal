@@ -7,4 +7,4 @@
 
 # GitHubにあげられているページ
 
-[https://giv-nishimura.github.io/](https://giv-nishimura.github.io/)
+[https://giv-nishimura.github.io/renewal](https://giv-nishimura.github.io/renewal)
