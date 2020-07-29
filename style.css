@@ -330,6 +330,54 @@ body.is-fixed-menu .inner#first {
 	text-align: left;	/*テキストを左よせ*/
 }
 
+/*広報支援
+---------------------------------------------------------------------------*/
+#business .contents h1 {
+	padding-bottom: 10%;
+}
+
+#business .text {
+	text-align: center;
+}
+
+#business table {
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#business table tr td {
+	padding: 8px;
+    border: solid;
+    text-align: left;
+    float: none!important;
+}
+
+/*各ブロックの設定*/
+.business-item {
+	overflow: hidden;
+	margin-bottom: 20px;
+	padding: 2%;	/*ボックス内の余白*/
+	border: 3px solid #ccc;	/*枠線の幅、線種、色*/
+	background: rgb(110, 110, 110);		/*背景色*/
+}
+
+/*ボックス内の右側のブロック*/
+.business-item .text {
+	margin-left: 50%;	/*左に空けるスペース。下のfigureの幅を考慮して設定。*/
+	line-height: 1.5;
+	padding: 0 20px;
+}
+/*h4見出し*/
+.business-item h4 {
+	font-size: 30px;	/*文字サイズ*/
+	color: #090db6;		/*文字色*/
+}
+/*figure画像*/
+.business-item figure {
+	width: 20%;		/*幅*/
+	float: left;	/*左に回り込み*/
+}
+
 /*works
 ---------------------------------------------------------------------------*/
 /* ボックス内のラベル */
