@@ -362,6 +362,34 @@ body.is-fixed-menu .inner#first {
 	color: #fff;		/*文字色*/
 }
 
+/*works
+---------------------------------------------------------------------------*/
+/* ボックス設定 */
+.works_box{
+	display: grid;   
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*各ブロックの設定*/
+.works_item {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	overflow: hidden;
+	width: calc(100% - 20px);		/*ブロック幅*/
+}
+
+.works_item p {
+	grid-column: 1/3;
+}
+
+/*h4見出し*/
+.works h4 {
+	font-size: 20px;	/*文字サイズ*/
+	text-align: center;	/*文字を中央に*/
+	color: #fff;		/*文字色*/
+}
+
 /*list2
 ---------------------------------------------------------------------------*/
 /*各ブロックの設定*/
