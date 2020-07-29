@@ -345,6 +345,40 @@ body.is-fixed-menu .inner#first {
 	font-size: 70%;
 }
 
+/* works_iv
+---------------------------------------------------------------------------*/
+/* ボックス設定 */
+.works_iv_box{
+	display: grid;   
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+/*各ブロックの設定*/
+.works_iv_item {
+	overflow: hidden;
+	width: calc(100% - 20px);		/*ブロック幅*/
+	overflow: hidden;
+	margin-bottom: 20px;
+	padding: 2%;	/*ボックス内の余白*/
+	border: 3px solid #ccc;	/*枠線の幅、線種、色*/
+	background: rgb(110, 110, 110);		/*背景色*/
+}
+
+.works_iv_item figure{
+	text-align: center;
+}
+
+.works_iv_item p {
+	grid-column: 1/3;
+}
+
+/*h4見出し*/
+.works_iv_item h4 {
+	font-size: 20px;	/*文字サイズ*/
+	text-align: center;	/*文字を中央に*/
+	color: #a50e0e;		/*文字色*/
+}
+
 /*works-item
 ---------------------------------------------------------------------------*/
 /*各ブロックの設定*/
