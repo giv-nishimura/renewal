@@ -604,250 +604,313 @@ img.fr {float: right;width:30%;margin-left: 20px;margin-bottom: 20px;}
 ------------------------------------------------------------------------------------------------------------------------------------------------------*/
 @media screen and (orientation: landscape) and (max-height:500px){
 
-/*メインメニュー
----------------------------------------------------------------------------*/
-/*メニュー１個あたりの設定*/
-#menubar-s li a {
-	float: left;	/*左に回り込みさせて２列にする*/
-	width: 40%;		/*幅*/
-	margin-left: 4%;	/*メニューの左側に空けるスペース*/
-}
-
-}
-
-
-
-/*画面幅800px以下の設定
-------------------------------------------------------------------------------------------------------------------------------------------------------*/
-@media screen and (max-width:800px){
-
-/*ヘッダー
----------------------------------------------------------------------------*/
-header {
-	 padding: 10px 0;	/*上下、左右への余白*/
-	 position: fixed;
-	 width: 100%;
-	 border-bottom: 1px solid #fff;
-}
-/*トップページのヘッダー*/
-#top header {
-	margin-bottom: 0px;	/*大きな端末用ではこの分にメニューが表示されていましたが、小さな端末では開閉ブロックになるので余白をリセット。*/
-}
-
-/*メインメニュー
----------------------------------------------------------------------------*/
-/*アニメーションのフレーム設定。全100コマアニメーションだと思って下さい。透明度(opacity)0%から透明度100%にする指定。*/
-@keyframes menu1 {
-	0% {opacity: 0;}
-	100% {opacity: 1;}
-}
-/*スマホ用メニューブロック*/
-#menubar-s {
-	display: block;overflow: hidden;
-	position: fixed;z-index: 50;
-	top: 0px;
-	width: 100%;
-	background: rgba(0,0,0,0.8);	/*背景色*/
-	border-top: 1px solid #fff;		/*上の線の幅、線種、色*/
-	animation-name: menu1;		/*上のkeyframesの名前*/
-	animation-duration: 0.5s;	/*アニメーションの実行時間。0.5秒。*/
-	animation-fill-mode: both;	/*待機中は最初のキーフレームを、完了後は最後のキーフレームを維持*/
-	margin-bottom: 30px;
-}
-/*メニュー１個あたりの設定*/
-#menubar-s li a {
-	display: block;text-decoration: none;
-	padding: 15px;	/*メニュー内の余白*/
-	border-bottom: 1px solid #fff;	/*下の線の幅、線種、色*/
-	color: #fff;	/*文字色*/
-	font-size: 20px;
-}
-/*PC用メニューを非表示にする*/
-#menubar {display: none;}
-
-/*３本バーアイコン設定
----------------------------------------------------------------------------*/
-/*３本バーブロック*/
-#menubar_hdr {
-	display: block;
-	position: fixed;z-index: 50;
-	top: 10px;	/*上から10pxの場所に配置*/
-	right: 10px;	/*右から10pxの場所に配置*/
-	border: 1px solid #000;	/*枠線の幅、線種、色*/
-}
-/*アイコン共通設定*/
-#menubar_hdr.close,
-#menubar_hdr.open {
-	width: 50px;	/*幅*/
-	height: 50px;	/*高さ*/
-}
-/*三本バーアイコン*/
-#menubar_hdr.close {
-	background: #fff url(./images/icon_menu.png) no-repeat center top/50px;	/*背景色、背景画像の読み込み、画像の上半分（３本マーク）を表示。幅は50px。*/
-}
-/*閉じるアイコン*/
-#menubar_hdr.open {
-	background: #fff url(./images/icon_menu.png) no-repeat center bottom/50px;	/*背景色、背景画像の読み込み、画像の下半分（×マーク）を表示。幅は50px。*/
-}
-
-/*fixmenu設定（メニューが画面上部に到達した際のスタイル）
-------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*fixmenuから折りたたみメニューになるのでリセット。*/
-body.is-fixed .inner#first,body.is-fixed-menu .inner#first {
-	margin-top: 0;
-}
-
-/*inner
----------------------------------------------------------------------------*/
-.inner#first {padding-top: 50px;}
-body#top .inner#first {padding-top: 0px;}
-
-/*コンテンツ
----------------------------------------------------------------------------*/
-/*h2タグ*/
-.contents h2 {
-	font-size: 30px;	/*文字サイズ*/
-}
-section + section {
-	padding-top: 20px;
-}
-
-/*service
----------------------------------------------------------------------------*/
-/*各ブロックの設定*/
-.service {
-	width: 44%;		/*ブロック幅*/
-}
-/*h4見出し*/
-.service h4 {
-	font-size: 20px;	/*文字サイズ*/
-}
-
-/*フッター設定
----------------------------------------------------------------------------*/
-/*footer内の左右のブロック指定*/
-#footer-left,#footer-right {
-	width: auto;	/*幅*/
-	float: none;	/*回り込みの解除*/
-	padding: 0 5%;	/*上下、左右へのブロック内の余白*/
-}
-
-/*その他
----------------------------------------------------------------------------*/
-.big1 {font-size: 20px;}
-.w50 {overflow: hidden;width: auto;}
-.fl {float: none;}
-.fr {float: none;}
-
-}
-
-
-
-/*画面幅480px以下の設定
-------------------------------------------------------------------------------------------------------------------------------------------------------*/
-@media screen and (max-width:480px){
-
-/*全体の設定
----------------------------------------------------------------------------*/
-body {
-	font-size: 12px;	/*文字サイズ*/
-	line-height: 1.5;	/*行間*/
-}
-
-/*トップページのメイン画像
-mainimg_sは古い端末用で準備した小さい画像ですが、小さな端末では大きな画像を使う必要がないので小さい方を適用しました。
----------------------------------------------------------------------------*/
-#mainimg {
-	background: url(./images/header_ukiyoe.jpg) no-repeat center center / cover;
-}
-
-/*３本バーアイコン設定
----------------------------------------------------------------------------*/
-/*３本バーブロック*/
-#menubar_hdr {
-	top: 6px;	/*上から6pxの場所に配置*/
-}
-
-/*inner
----------------------------------------------------------------------------*/
-.inner#first {padding-top: 70px;}
-
-/*コンテンツ
----------------------------------------------------------------------------*/
-.contents {
-	padding: 20px 3%;	/*上下、左右へのコンテンツ内の余白*/
-}
-/*h2タグ*/
-.contents h2 {
-	font-size: 20px !important;
-}
-/*h2タグのspan（装飾用）タグ*/
-.contents h2 span {
-	margin-top: 0px;
-	font-size: 10px;	/*文字サイズ*/
-}
-/*h3タグ*/
-.contents h3 {
-	font-size: 16px !important;
-	padding-left: 10px;
-	margin-bottom: 10px;
-}
-/*h3タグの１文字目*/
-.contents h3::first-letter {
-	padding-left: 10px;	/*線と文字との余白*/
-}
-/*段落タグ*/
-.contents p {
-	padding: 0 10px 15px;
-}
-
-/*service
----------------------------------------------------------------------------*/
-/*ボックス内の右側のブロック*/
-.service .text {
-	margin-left: 0;
-}
-/*figure画像*/
-.service figure {
-	width: 50%;		/*幅*/
-	float: none;
-	display: block;
-	margin: 0 auto;
-}
-/*h4見出し*/
-.service h4 {
-	font-size: 20px;	/*文字サイズ*/
-}
-
-/*テーブル（ta1）
----------------------------------------------------------------------------*/
-/*ta1設定*/
-.ta1, .ta1 td, .ta1 th {
-	padding: 5px;	/*ボックス内の余白*/
-}
-/*ta1の左側ボックス*/
-.ta1 th {
-	width: 100px;
-}
-
-/*inputボタン
----------------------------------------------------------------------------*/
-.contents input[type="submit"].btn,
-.contents input[type="button"].btn,
-.contents input[type="reset"].btn {
-	font-size: 16px;		/*文字サイズ*/
-}
-
-/*その他
----------------------------------------------------------------------------*/
-.photo {padding: 5px;border: 2px solid #fff;}
-.ws,.wl {width: 94%;}
-.fl {float: none;}
-img.fl {float: none;display: block;width:90%;margin: 0 auto 20px;}
-.fr {float: none;}
-img.fr {float: none;display: block;width:90%;margin: 0 auto 20px;}
-.big1 {font-size: 16px;}
-.sh {display:block;}
-.pc {display:none;}
-
-}
+	/*h1　（トップページのメイン画像上に出てくるサイト名）
+	---------------------------------------------------------------------------*/
+	#top header h1 {
+		bottom: 30%;		/*下から30%の場所に配置*/
+	}
+	
+	/*トップページの「ホームページ開設キャンペーン」ボックス設定
+	---------------------------------------------------------------------------*/
+	#topics {
+		display: none;	/*画面が狭いので非表示にする*/
+	}
+	
+	/*メインメニュー
+	---------------------------------------------------------------------------*/
+	/*メニュー１個あたりの設定*/
+	#menubar-s li a {
+		float: left;	/*左に回り込みさせて２列にする*/
+		width: 40%;		/*幅*/
+		margin-left: 4%;	/*メニューの左側に空けるスペース*/
+	}
+	
+	}
+	
+	
+	
+	/*画面幅800px以下の設定
+	------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	@media screen and (max-width:800px){
+	
+	/*ヘッダー
+	---------------------------------------------------------------------------*/
+	header {
+		 padding: 10px 0;	/*上下、左右への余白*/
+		 position: fixed;
+		 width: 100%;
+		 border-bottom: 1px solid #fff;
+	}
+	/*トップページのヘッダー*/
+	#top header {
+		margin-bottom: 0px;	/*大きな端末用ではこの分にメニューが表示されていましたが、小さな端末では開閉ブロックになるので余白をリセット。*/
+	}
+	
+	/*メインメニュー
+	---------------------------------------------------------------------------*/
+	/*アニメーションのフレーム設定。全100コマアニメーションだと思って下さい。透明度(opacity)0%から透明度100%にする指定。*/
+	@keyframes menu1 {
+		0% {opacity: 0;}
+		100% {opacity: 1;}
+	}
+	/*スマホ用メニューブロック*/
+	#menubar-s {
+		display: block;overflow: hidden;
+		position: fixed;z-index: 50;
+		top: 0px;
+		width: 100%;
+		background: rgba(0,0,0,0.8);	/*背景色*/
+		border-top: 1px solid #fff;		/*上の線の幅、線種、色*/
+		animation-name: menu1;		/*上のkeyframesの名前*/
+		animation-duration: 0.5s;	/*アニメーションの実行時間。0.5秒。*/
+		animation-fill-mode: both;	/*待機中は最初のキーフレームを、完了後は最後のキーフレームを維持*/
+		margin-bottom: 30px;
+	}
+	/*メニュー１個あたりの設定*/
+	#menubar-s li a {
+		display: block;text-decoration: none;
+		padding: 15px;	/*メニュー内の余白*/
+		border-bottom: 1px solid #fff;	/*下の線の幅、線種、色*/
+		color: #fff;	/*文字色*/
+		font-size: 20px;
+	}
+	/*PC用メニューを非表示にする*/
+	#menubar {display: none;}
+	
+	/*３本バーアイコン設定
+	---------------------------------------------------------------------------*/
+	/*３本バーブロック*/
+	#menubar_hdr {
+		display: block;
+		position: fixed;z-index: 50;
+		top: 10px;	/*上から10pxの場所に配置*/
+		right: 10px;	/*右から10pxの場所に配置*/
+		border: 1px solid #000;	/*枠線の幅、線種、色*/
+	}
+	/*アイコン共通設定*/
+	#menubar_hdr.close,
+	#menubar_hdr.open {
+		width: 50px;	/*幅*/
+		height: 50px;	/*高さ*/
+	}
+	/*三本バーアイコン*/
+	#menubar_hdr.close {
+		background: #fff url(../images/icon_menu.png) no-repeat center top/50px;	/*背景色、背景画像の読み込み、画像の上半分（３本マーク）を表示。幅は50px。*/
+	}
+	/*閉じるアイコン*/
+	#menubar_hdr.open {
+		background: #fff url(../images/icon_menu.png) no-repeat center bottom/50px;	/*背景色、背景画像の読み込み、画像の下半分（×マーク）を表示。幅は50px。*/
+	}
+	
+	/*fixmenu設定（メニューが画面上部に到達した際のスタイル）
+	------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	/*fixmenuから折りたたみメニューになるのでリセット。*/
+	body.is-fixed .inner#first,body.is-fixed-menu .inner#first {
+		margin-top: 0;
+	}
+	
+	/*inner
+	---------------------------------------------------------------------------*/
+	.inner#first {padding-top: 50px;}
+	body#top .inner#first {padding-top: 0px;}
+	
+	/*コンテンツ
+	---------------------------------------------------------------------------*/
+	/*h2タグ*/
+	.contents h2 {
+		font-size: 30px;	/*文字サイズ*/
+	}
+	section + section {
+		padding-top: 20px;
+	}
+	
+	/*list1（トップページの「こんなお悩みありませんか？」のブロック）
+	---------------------------------------------------------------------------*/
+	/*各ブロックの設定*/
+	.list1 {
+		width: 44%;		/*ブロック幅*/
+	}
+	/*h4見出し*/
+	.list1 h4 {
+		font-size: 20px;	/*文字サイズ*/
+	}
+	
+	/*フッター設定
+	---------------------------------------------------------------------------*/
+	/*footer内の左右のブロック指定*/
+	#footer-left,#footer-right {
+		width: auto;	/*幅*/
+		float: none;	/*回り込みの解除*/
+		padding: 0 5%;	/*上下、左右へのブロック内の余白*/
+	}
+	
+	/*その他
+	---------------------------------------------------------------------------*/
+	.big1 {font-size: 20px;}
+	.w50 {overflow: hidden;width: auto;}
+	.fl {float: none;}
+	.fr {float: none;}
+	
+	}
+	
+	
+	
+	/*画面幅480px以下の設定
+	------------------------------------------------------------------------------------------------------------------------------------------------------*/
+	@media screen and (max-width:480px){
+	
+	/*全体の設定
+	---------------------------------------------------------------------------*/
+	body {
+		font-size: 12px;	/*文字サイズ*/
+		line-height: 1.5;	/*行間*/
+	}
+	
+	/*ヘッダー
+	---------------------------------------------------------------------------*/
+	/*h1画像（トップページ以外で使用するロゴ画像）*/
+	header h1 img {
+		width: 200px;	/*画像幅*/
+	}
+	
+	/*トップページのメイン画像
+	mainimg_sは古い端末用で準備した小さい画像ですが、小さな端末では大きな画像を使う必要がないので小さい方を適用しました。
+	---------------------------------------------------------------------------*/
+	#mainimg {
+		background: url(../images/mainimg_s.jpg) no-repeat center center / cover;
+	}
+	
+	/*トップページのSVGロゴアニメーション設定
+	---------------------------------------------------------------------------*/
+	#svg-logo {
+		width: 50%;	/*画像の幅*/
+		left: 25%;	/*左から40%の場所に配置*/
+	}
+	
+	/*トップページの「ホームページ開設キャンペーン」ボックス設定
+	---------------------------------------------------------------------------*/
+	/*ボックス内のh2見出し*/
+	#topics h2 {
+		font-size: 18px;	/*文字サイズ*/
+	}
+	
+	/*３本バーアイコン設定
+	---------------------------------------------------------------------------*/
+	/*３本バーブロック*/
+	#menubar_hdr {
+		top: 6px;	/*上から6pxの場所に配置*/
+	}
+	
+	/*inner
+	---------------------------------------------------------------------------*/
+	.inner#first {padding-top: 70px;}
+	
+	/*コンテンツ
+	---------------------------------------------------------------------------*/
+	.contents {
+		padding: 20px 3%;	/*上下、左右へのコンテンツ内の余白*/
+	}
+	/*h2タグ*/
+	.contents h2 {
+		font-size: 20px !important;
+	}
+	/*h2タグのspan（装飾用）タグ*/
+	.contents h2 span {
+		margin-top: 0px;
+		font-size: 10px;	/*文字サイズ*/
+	}
+	/*h3タグ*/
+	.contents h3 {
+		font-size: 16px !important;
+		padding-left: 10px;
+		margin-bottom: 10px;
+	}
+	/*h3タグの１文字目*/
+	.contents h3::first-letter {
+		padding-left: 10px;	/*線と文字との余白*/
+	}
+	/*段落タグ*/
+	.contents p {
+		padding: 0 10px 15px;
+	}
+	
+	/*list2（施術メニューページの各症状ブロック）
+	---------------------------------------------------------------------------*/
+	/*ボックス内の右側のブロック*/
+	.list2 .text {
+		margin-left: 0;
+	}
+	/*figure画像*/
+	.list2 figure {
+		width: 50%;		/*幅*/
+		float: none;
+		display: block;
+		margin: 0 auto;
+	}
+	/*h4見出し*/
+	.list2 h4 {
+		font-size: 20px;	/*文字サイズ*/
+	}
+	
+	/*診療のご案内ページの「診療までの流れ」のステップブロック（info.html）
+	---------------------------------------------------------------------------*/
+	/*ステップブロック１個あたりの設定*/
+	.step {
+		padding: 10px 10px 60px;	/*上、左右、下へのボックス内の余白*/
+		margin-bottom: 10px;
+		background: url(../images/arrow1.png) no-repeat center bottom/100px;	/*背景の矢印画像の読み込み。りピーとせず、中央下部に配置。幅は200px。*/
+	}
+	/*h4見出し*/
+	.step h4 {
+		font-size: 20px;	/*文字サイズ*/
+	}
+	/*h4見出しのspanタグ。見出し冒頭の番号。*/
+	.step h4 span {
+		width: 30px;			/*幅*/
+		line-height: 30px;		/*高さ（行間）*/
+		margin-right: 10px;		/*右側に空けるスペース*/
+	}
+	/*テーブル（ta1）
+	---------------------------------------------------------------------------*/
+	/*ta1設定*/
+	.ta1, .ta1 td, .ta1 th {
+		padding: 5px;	/*ボックス内の余白*/
+	}
+	/*ta1の左側ボックス*/
+	.ta1 th {
+		width: 100px;
+	}
+	
+	/*よく頂く質問
+	---------------------------------------------------------------------------*/
+	/*外側ブロック*/
+	.faq {
+		padding: 0px 10px;	/*上下、左右への余白*/
+	}
+	/*質問、回答共通*/
+	.faq dt,.faq dd {
+		background: none;	/*背景アイコンを非表示に*/
+		padding-left: 0px;
+	}
+	
+	/*inputボタン
+	---------------------------------------------------------------------------*/
+	.contents input[type="submit"].btn,
+	.contents input[type="button"].btn,
+	.contents input[type="reset"].btn {
+		font-size: 16px;		/*文字サイズ*/
+	}
+	
+	/*その他
+	---------------------------------------------------------------------------*/
+	.photo {padding: 5px;border: 2px solid #fff;}
+	.ws,.wl {width: 94%;}
+	.fl {float: none;}
+	img.fl {float: none;display: block;width:90%;margin: 0 auto 20px;}
+	.fr {float: none;}
+	img.fr {float: none;display: block;width:90%;margin: 0 auto 20px;}
+	.big1 {font-size: 16px;}
+	.sh {display:block;}
+	.pc {display:none;}
+	
+	}
