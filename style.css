@@ -361,11 +361,8 @@ body.is-fixed-menu .inner#first {
 	background: rgb(110, 110, 110);		/*背景色*/
 }
 
-/*ボックス内の右側のブロック*/
-.business-item .text {
-	margin-left: 50%;	/*左に空けるスペース。下のfigureの幅を考慮して設定。*/
-	line-height: 1.5;
-	padding: 0 20px;
+.business-item h4 {
+	grid-column: 2/5;
 }
 /*h4見出し*/
 .business-item h4 {
@@ -374,8 +371,13 @@ body.is-fixed-menu .inner#first {
 }
 /*figure画像*/
 .business-item figure {
-	width: 20%;		/*幅*/
+	width: 15%;		/*幅*/
 	float: left;	/*左に回り込み*/
+}
+
+.triangle {
+	font-size: 30px;
+	text-align: center;
 }
 
 /*works
@@ -777,11 +779,11 @@ img.fr {float: right;width:30%;margin-left: 20px;margin-bottom: 20px;}
 	}
 	/*三本バーアイコン*/
 	#menubar_hdr.close {
-		background: #fff url(../images/icon_menu.png) no-repeat center top/50px;	/*背景色、背景画像の読み込み、画像の上半分（３本マーク）を表示。幅は50px。*/
+		background: #fff url(./images/icon_menu.png) no-repeat center top/50px;	/*背景色、背景画像の読み込み、画像の上半分（３本マーク）を表示。幅は50px。*/
 	}
 	/*閉じるアイコン*/
 	#menubar_hdr.open {
-		background: #fff url(../images/icon_menu.png) no-repeat center bottom/50px;	/*背景色、背景画像の読み込み、画像の下半分（×マーク）を表示。幅は50px。*/
+		background: #fff url(./images/icon_menu.png) no-repeat center bottom/50px;	/*背景色、背景画像の読み込み、画像の下半分（×マーク）を表示。幅は50px。*/
 	}
 	
 	/*fixmenu設定（メニューが画面上部に到達した際のスタイル）
@@ -859,7 +861,7 @@ img.fr {float: right;width:30%;margin-left: 20px;margin-bottom: 20px;}
 	mainimg_sは古い端末用で準備した小さい画像ですが、小さな端末では大きな画像を使う必要がないので小さい方を適用しました。
 	---------------------------------------------------------------------------*/
 	#mainimg {
-		background: url(../images/mainimg_s.jpg) no-repeat center center / cover;
+		background: url(./images/header_ukiyoe.jpg) no-repeat center center / cover;
 	}
 	
 	/*トップページのSVGロゴアニメーション設定
