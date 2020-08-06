@@ -26,7 +26,8 @@ iframe {width: 100%;}
 /*リンク（全般）設定
 ---------------------------------------------------------------------------*/
 a {
-	color: #666;		/*リンクテキストの色*/
+	color: #FFF;		/*リンクテキストの色*/
+	text-decoration: none;
 	transition: 0.2s;	/*マウスオン時の移り変わるまでの時間設定。0.2秒。*/
 }
 a:hover {
@@ -219,11 +220,6 @@ body.is-fixed-menu .inner#first {
 	border-bottom: 2px dotted #ccc;	/*下線の幅、線種、色*/
 	padding-left: 20px;
 }
-/*h3タグの１文字目*/
-.contents h3::first-letter {
-	border-left: 3px solid #090db6;	/*左側の線の幅、線種、色*/
-	padding-left: 20px;	/*線と文字との余白*/
-}
 /*段落タグ*/
 .contents p {
 	padding: 0 20px 20px;
@@ -291,49 +287,137 @@ body.is-fixed-menu .inner#first {
 .service {
 	overflow: hidden;
 	margin-bottom: 20px;
-	padding: 2%;	/*ボックス内の余白*/
-	border: 3px solid #ccc;	/*枠線の幅、線種、色*/
-	background: rgb(110, 110, 110);		/*背景色*/
+	padding: 2%;
+	display: grid;
+	grid-template-columns:20% 80% ;
+	border-bottom: 2px dotted rgba(255, 255, 255, .7);
+}
+
+@media screen and (max-width: 800px) {
+	.service {
+		grid-template-columns: 1fr;
+		display: block;
+		padding-bottom: 80px;
+		border-bottom: none;
+	}
+	.service figure {
+		margin: 0 auto;
+	}
 }
 /*ボックス内の右側のブロック*/
+.contents h1 {
+	color: #fff;		/*文字色*/
+	text-align: center;
+}
+
 .service .text {
-	margin-left: 31%;	/*左に空けるスペース。下のfigureの幅を考慮して設定。*/
+	/* margin-left: 31%;	左に空けるスペース。下のfigureの幅を考慮して設定。 */
+	margin-left: 10px;
 	line-height: 1.5;
 }
 
-/*h4見出し*/
+.contents h1 {
+	color: #fff;
+	text-align: center;
+}
+
 .service h4 {
-	font-size: 30px;	/*文字サイズ*/
-	color: #090db6;		/*文字色*/
+	font-size: 30px;
+	color: #fff;
+	height: 45px;
+	text-align: center;
 }
-/*figure画像*/
+.service .text > div {
+	height: 300px;
+	/* position: relative; */
+}
+.service-introduction {
+	/* position: relative; */
+}
+.service .text p {
+	padding: 10px 5% 0 5% !important;
+}
+.service-introduction a {
+	display: block;
+	text-align: end;
+	padding-right: 5%;
+}
+.service .text table {
+	/* position: absolute; */
+	bottom: 0;
+	margin: 0 5% !important;
+	/* left: 50%; */
+	/* transform: translateX(-50%); */
+}
+
 .service figure {
-	width: 30%;		/*幅*/
-	float: left;	/*左に回り込み*/
+    width: 185px;
+	height: 248px;
 }
-/*service.service内のテーブルタグ*/
+
+.service figure a {
+	width: 100%;
+}
+.service figure .image {
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#kouho {
+	background-image: url("./images/kouho.jpg");
+}
+
+#kouho:hover {
+	background-image: url("./images/kouho_on.jpg");
+}
+
+#yorozu {
+	background-image: url("./images/yorozu.jpg");
+}
+
+#yorozu:hover {
+	background-image: url("./images/yorozu_on.jpg");
+}
+
+#kawara {
+	background-image: url("./images/kawara.jpg");
+}
+
+#kawara:hover {
+	background-image: url("./images/kawara_on.jpg");
+}
+
 .service table {
-	font-size: 13px;	/*文字サイズ*/
-	border: 1px solid #ccc;	/*テーブルの枠線の幅、線種、色*/
+	font-size: 13px;
+	border: 1px solid #fff;
 }
-/*service.service内のテーブルタグ（行）*/
 .service table tr {
-	border-top: 1px dashed #ccc;	/*各行の上の線の幅、線種、色*/
+	border-top: 1px dashed #fff;
 }
-/*service.service内のテーブルタグ（tdとth）*/
 .service table td, .service table th {
-	padding: 2px 5px;	/*上下、左右への余白*/
+	padding: 2px 5px;
 }
-/*service.service内のテーブルタグ（th見出し）*/
 .service table th {
-	background: #eee;	/*背景色*/
-	text-align: left;	/*テキストを左よせ*/
+	color: black;
+	background: #fff;
+	text-align: left;
 }
 
 /*広報支援
 ---------------------------------------------------------------------------*/
+#business .contents {
+	text-align: center;
+}
+
 #business .contents h1 {
-	padding-bottom: 10%;
+	width: 25%;
+	padding-bottom: 5%;
+	margin: 0 auto;
+}
+
+#business .contents section h4 {
+	font-size: 30px;
 }
 
 #business .text {
@@ -342,7 +426,8 @@ body.is-fixed-menu .inner#first {
 
 #business table {
 	margin-left: auto;
-    margin-right: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
 }
 
 #business table tr td {
@@ -355,24 +440,23 @@ body.is-fixed-menu .inner#first {
 /*各ブロックの設定*/
 .business-item {
 	overflow: hidden;
-	margin-bottom: 20px;
 	padding: 2%;	/*ボックス内の余白*/
-	border: 3px solid #ccc;	/*枠線の幅、線種、色*/
-	background: rgb(110, 110, 110);		/*背景色*/
 }
 
-.business-item h4 {
-	grid-column: 2/5;
+.business-item .flow {
+	display: flex;
+	justify-content:center;
+	padding-bottom: 2%;
 }
-/*h4見出し*/
-.business-item h4 {
-	font-size: 30px;	/*文字サイズ*/
-	color: #090db6;		/*文字色*/
-}
-/*figure画像*/
+
 .business-item figure {
-	width: 15%;		/*幅*/
-	float: left;	/*左に回り込み*/
+	width: 5%;		/*幅*/
+}
+
+.business-item h5 {
+	font-size: 20px;
+	color: #fff;
+	margin-left: 3%;
 }
 
 .triangle {
@@ -380,14 +464,72 @@ body.is-fixed-menu .inner#first {
 	text-align: center;
 }
 
+.sharepages {
+	width: 50%;
+	margin: 0 auto;
+}
+
+/*よろず相談
+---------------------------------------------------------------------------*/
+#consulting .contents {
+	text-align: center;
+}
+
+#consulting .contents h1 {
+	width: 25%;
+	padding-bottom: 5%;
+	margin: 0 auto;
+}
+
+#consulting .contents section h4 {
+	font-size: 30px;
+}
+
+
+#consulting table {
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5%;
+}
+
+#consulting table tr td {
+	padding: 8px;
+    border: solid;
+    text-align: left;
+    float: none!important;
+}
+
+/*かわら版
+---------------------------------------------------------------------------*/
+#lifestyle .contents {
+	text-align: center;
+}
+
+#lifestyle .lifestyle {
+	padding-bottom: 5%;
+}
+
+#lifestyle .contents h1 {
+	width: 25%;
+	padding-bottom: 5%;
+	margin: 0 auto;
+}
+
+#lifestyle .contents section h4 {
+	font-size: 30px;
+}
+
+#lifestyle .text {
+	text-align: center;
+}
+
+
 /*works
 ---------------------------------------------------------------------------*/
-/* ボックス内のラベル */
-/* .text .label {
+#works .contents {
+	text-align: center;
+}
 
-} */
-
-/* ボックス内のラベルのテキスト */
 .text .label li {
 	display: inline-block;
 	background-color: aqua;
@@ -406,16 +548,15 @@ body.is-fixed-menu .inner#first {
 /*各ブロックの設定*/
 .works_iv_item {
 	overflow: hidden;
-	width: calc(100% - 20px);		/*ブロック幅*/
+	width: calc(100% - 20px);
 	overflow: hidden;
 	margin-bottom: 20px;
-	padding: 2%;	/*ボックス内の余白*/
-	border: 3px solid #ccc;	/*枠線の幅、線種、色*/
-	background: rgb(110, 110, 110);		/*背景色*/
+	padding: 2%;
 }
 
 .works_iv_item figure{
-	text-align: center;
+	width: 30%;
+	margin: 0 auto;
 }
 
 .works_iv_item p {
@@ -431,17 +572,20 @@ body.is-fixed-menu .inner#first {
 
 /*works-item
 ---------------------------------------------------------------------------*/
+.works-box{
+	display: grid;   
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
 /*各ブロックの設定*/
 .works-item {
 	overflow: hidden;
 	margin-bottom: 20px;
-	padding: 2%;	/*ボックス内の余白*/
-	border: 3px solid #ccc;	/*枠線の幅、線種、色*/
-	background: rgb(110, 110, 110);		/*背景色*/
+	padding: 2%;
 }
 /*ボックス内の右側のブロック*/
 .works-item .text {
-	margin-left: 50%;	/*左に空けるスペース。下のfigureの幅を考慮して設定。*/
+	/* margin-left: 50%; */
 	line-height: 1.5;
 	padding: 0 20px;
 }
@@ -452,8 +596,8 @@ body.is-fixed-menu .inner#first {
 }
 /*figure画像*/
 .works-item figure {
-	width: 50%;		/*幅*/
-	float: left;	/*左に回り込み*/
+	width: 50%;
+	margin: 0 auto;
 }
 /*serviceとworks-itemの段落タグ指定
 ---------------------------------------------------------------------------*/
