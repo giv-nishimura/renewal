@@ -293,29 +293,6 @@ body.is-fixed-menu .inner#first {
 	border-bottom: 2px dotted rgba(255, 255, 255, .7);
 }
 
-@media screen and (max-width: 1080px) {
-	.service {
-		grid-template-columns: 185px 1fr ;
-	}
-}
-
-@media screen and (max-width: 800px) {
-	.service {
-		height: auto;
-		grid-template-columns: 1fr;
-		display: block;
-		padding-bottom: 80px;
-		border-bottom: none;
-	}
-	.service figure {
-		height: 40vh;
-		margin: 20px 0;
-	}
-	.service .text {
-		line-height: 1.5;
-		padding: 0 5%;
-	}
-}
 /*ボックス内の右側のブロック*/
 .contents h1 {
 	color: #fff;		/*文字色*/
@@ -592,7 +569,9 @@ body.is-fixed-menu .inner#first {
 .service p, .works-item p {
 	padding: 0 !important;
 }
-
+.works-description {
+	padding-top: 8px;
+}
 /*フッター設定
 ---------------------------------------------------------------------------*/
 footer .pr {display: block;font-size: 80%;}
@@ -843,11 +822,21 @@ img.fr {float: right;width:30%;margin-left: 20px;margin-bottom: 20px;}
 	
 	}
 	
+
+	@media screen and (max-width: 1080px) {
+		.service {
+			grid-template-columns: 185px 1fr ;
+		}
+	
+		.works-box {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
 	
 	
 	/*画面幅800px以下の設定
 	------------------------------------------------------------------------------------------------------------------------------------------------------*/
-	@media screen and (max-width:800px){
+@media screen and (max-width:800px){
 	
 	/*ヘッダー
 	---------------------------------------------------------------------------*/
@@ -969,7 +958,32 @@ img.fr {float: right;width:30%;margin-left: 20px;margin-bottom: 20px;}
 	.fl {float: none;}
 	.fr {float: none;}
 	
+
+	/*service
+	---------------------------------------------------------------------------*/
+	.service {
+		height: auto;
+		grid-template-columns: 1fr;
+		display: block;
+		padding-bottom: 80px;
+		border-bottom: none;
 	}
+	.service figure {
+		height: 40vh;
+		margin: 20px 0;
+	}
+	.service .text {
+		line-height: 1.5;
+		padding: 0 5%;
+	}
+
+	/*works
+	---------------------------------------------------------------------------*/
+	.works_iv_box, .works-box {
+		grid-template-columns: 1fr;
+	}
+
+}
 	
 	
 	
