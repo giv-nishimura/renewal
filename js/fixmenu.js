@@ -29,17 +29,3 @@ function fm_addEvent(elm,listener,fn){
 		elm.attachEvent("on"+listener,fn);
 	}
 }
-fm_addEvent(window, 'load', function() {
-	var offsettop;
-	offsettop = document.getElementById('menubar').offsetTop;
-	if (!offsettop) {
-		offsettop = document.getElementById('menubar-s').offsetTop;
-	}
-	fm_addEvent(window, 'scroll', function() {
-  	if (offsettop < Math.max(document.body.scrollTop,document.documentElement.scrollTop)) {
-  		fm_addClass(document.body, 'is-fixed-menu');
-    } else {
-    	fm_removeClass(document.body, 'is-fixed-menu');
-  	}
-  });
-});
