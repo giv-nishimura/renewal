@@ -39,7 +39,8 @@ a:hover {
 ---------------------------------------------------------------------------*/
 header {
 	background: #000;	/*背景色*/
-	position: relative;z-index: 40;
+	position: relative;
+	z-index: 40;
 }
 /*トップページのヘッダー*/
 #top header {
@@ -70,7 +71,9 @@ header h1 img {
 ---------------------------------------------------------------------------*/
 /*メニューブロック*/
 #menubar {
-	position: relative;z-index: 30;
+	position: relative;
+	z-index: 30;
+	margin-bottom: -72px;
 	border-top: 1px solid #9c9c9c;		/*上の線の幅、線種、色*/
 	border-bottom: 1px solid #9c9c9c;	/*下の線の幅、線種、色*/
 	text-align: center;	/*文字を中央に*/
@@ -146,9 +149,6 @@ body.is-fixed-menu #menubar.nav-fix-pos {
 	box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
 	border-bottom: 1px solid #9c9c9c;	/*下の線の幅、線種、色*/
 }
-body.is-fixed-menu #menubar.nav-fix-pos ul {
-	background: rgba(255,255,255,0.95);
-}
 body.is-fixed-menu .inner#first {
 	margin-top: 72px;	/*メニューの高さ（「#menubar ul li aのline-height: 50px;」と「marginの計20px分」と、「#menubarのborderの上下2px分」）を合計した数字を設定する*/
 }
@@ -174,7 +174,7 @@ body.is-fixed-menu .inner#first {
 .contents {
 	overflow: hidden;margin: 0 auto;
 	max-width: 1200px;	/*サイトの最大幅*/
-	padding: 50px 5%;	/*上下、左右へのコンテンツ内の余白*/
+	padding: 90px 5% 50px 5%;
 }
 /*h2タグ*/
 .contents h2 {
@@ -286,22 +286,34 @@ body.is-fixed-menu .inner#first {
 /*各ブロックの設定*/
 .service {
 	overflow: hidden;
-	margin-bottom: 20px;
+	height: 40vh;
 	padding: 2%;
 	display: grid;
-	grid-template-columns:20% 80% ;
+	grid-template-columns: 225px 1fr ;
 	border-bottom: 2px dotted rgba(255, 255, 255, .7);
+}
+
+@media screen and (max-width: 1080px) {
+	.service {
+		grid-template-columns: 185px 1fr ;
+	}
 }
 
 @media screen and (max-width: 800px) {
 	.service {
+		height: auto;
 		grid-template-columns: 1fr;
 		display: block;
 		padding-bottom: 80px;
 		border-bottom: none;
 	}
 	.service figure {
-		margin: 0 auto;
+		height: 40vh;
+		margin: 20px 0;
+	}
+	.service .text {
+		line-height: 1.5;
+		padding: 0 5%;
 	}
 }
 /*ボックス内の右側のブロック*/
@@ -311,9 +323,8 @@ body.is-fixed-menu .inner#first {
 }
 
 .service .text {
-	/* margin-left: 31%;	左に空けるスペース。下のfigureの幅を考慮して設定。 */
-	margin-left: 10px;
 	line-height: 1.5;
+	padding: 0 5%;
 }
 
 .contents h1 {
@@ -324,37 +335,12 @@ body.is-fixed-menu .inner#first {
 .service h4 {
 	font-size: 30px;
 	color: #fff;
-	height: 45px;
 	text-align: center;
-}
-.service .text > div {
-	height: 300px;
-	/* position: relative; */
-}
-.service-introduction {
-	/* position: relative; */
-}
-.service .text p {
-	padding: 10px 5% 0 5% !important;
 }
 .service-introduction a {
 	display: block;
 	text-align: end;
-	padding-right: 5%;
 }
-.service .text table {
-	/* position: absolute; */
-	bottom: 0;
-	margin: 0 5% !important;
-	/* left: 50%; */
-	/* transform: translateX(-50%); */
-}
-
-.service figure {
-    width: 185px;
-	height: 248px;
-}
-
 .service figure a {
 	width: 100%;
 }
@@ -391,6 +377,8 @@ body.is-fixed-menu .inner#first {
 .service table {
 	font-size: 13px;
 	border: 1px solid #fff;
+	width: 100%;
+	margin-top: 20px;
 }
 .service table tr {
 	border-top: 1px dashed #fff;
@@ -864,7 +852,6 @@ img.fr {float: right;width:30%;margin-left: 20px;margin-bottom: 20px;}
 	/*ヘッダー
 	---------------------------------------------------------------------------*/
 	header {
-		 padding: 10px 0;	/*上下、左右への余白*/
 		 position: fixed;
 		 width: 100%;
 		 border-bottom: 1px solid #fff;
@@ -939,6 +926,9 @@ img.fr {float: right;width:30%;margin-left: 20px;margin-bottom: 20px;}
 	
 	/*inner
 	---------------------------------------------------------------------------*/
+	.inner {
+    padding-top: 33%;
+	}
 	.inner#first {padding-top: 50px;}
 	body#top .inner#first {padding-top: 0px;}
 	
@@ -994,12 +984,6 @@ img.fr {float: right;width:30%;margin-left: 20px;margin-bottom: 20px;}
 		line-height: 1.5;	/*行間*/
 	}
 	
-	/*ヘッダー
-	---------------------------------------------------------------------------*/
-	/*h1画像（トップページ以外で使用するロゴ画像）*/
-	header h1 img {
-		width: 200px;	/*画像幅*/
-	}
 	
 	/*トップページのメイン画像
 	mainimg_sは古い端末用で準備した小さい画像ですが、小さな端末では大きな画像を使う必要がないので小さい方を適用しました。
