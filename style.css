@@ -212,14 +212,6 @@ body.is-fixed-menu .inner#first {
 	color: #fff;	/*文字色（古いブラウザ用）*/
 	color: rgba(255,255,255,0.3);	/*文字色。255,255,255は白の事で0.3は透明度30%の事。*/
 }
-/*h3タグ*/
-.contents h3 {
-	clear: both;
-	margin-bottom: 20px;
-	font-size: 24px;	/*文字サイズ*/
-	border-bottom: 2px dotted #ccc;	/*下線の幅、線種、色*/
-	padding-left: 20px;
-}
 /*段落タグ*/
 .contents p {
 	padding: 0 20px 20px;
@@ -286,10 +278,10 @@ body.is-fixed-menu .inner#first {
 /*各ブロックの設定*/
 .service {
 	overflow: hidden;
-	height: 40vh;
 	padding: 2%;
 	display: grid;
-	grid-template-columns: 225px 1fr ;
+	grid-template-columns: 252px 1fr ;
+	min-height: 336px;
 	border-bottom: 2px dotted rgba(255, 255, 255, .7);
 }
 
@@ -322,10 +314,10 @@ body.is-fixed-menu .inner#first {
 	width: 100%;
 }
 .service figure .image {
-    height: 100%;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+	background-position: center;
+	min-height: 100%;
 }
 #kouho {
 	background-image: url("./images/kouho.jpg");
@@ -472,6 +464,9 @@ body.is-fixed-menu .inner#first {
 
 #lifestyle .lifestyle {
 	padding-bottom: 5%;
+	display: grid;
+	grid-template-columns: 100px 1fr;
+	border-top: 2px dotted rgba(255, 255, 255, .7);
 }
 
 #lifestyle .contents h1 {
@@ -480,12 +475,23 @@ body.is-fixed-menu .inner#first {
 	margin: 0 auto;
 }
 
-#lifestyle .contents section h4 {
+
+#lifestyle .contents h2 {
 	font-size: 30px;
+}
+#lifestyle .contents h3 {
+	font-size: 20px;
 }
 
 #lifestyle .text {
 	text-align: center;
+}
+
+#lifestyle .lifestyle figure {
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin:auto;
 }
 
 
@@ -826,6 +832,7 @@ img.fr {float: right;width:30%;margin-left: 20px;margin-bottom: 20px;}
 	@media screen and (max-width: 1080px) {
 		.service {
 			grid-template-columns: 185px 1fr ;
+			min-height: 282px;
 		}
 	
 		.works-box {
